@@ -13,9 +13,19 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="styles/style.min.css">
     <!-- endinject -->
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="selectivizr.js"></script>
+      <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+    <![endif]-->
   </head>
   <body>
-
+    <!--[if lt  IE  8]>
+      <p  class="browsehappy">
+        Estás usando  un  navegador <strong>desactualizado</strong>.
+        Por favor <a  href="http://browsehappy.com/">actualiza  tu  navegador</a>
+        Para  mejorar la  experiencia..
+      </p>
+    <![endif]-->
     <header class="header">
       <div class="header__mobile">
         <p class="header__mobile--logo">Logo</p>
@@ -31,11 +41,24 @@
       </nav>
     </header>
 
+    <section>
+    <div class="video-container">
+      <video id="video" controls poster="./images/les-brown.jpg">
+        <source src="./videos/less-brown.mp4"> Lo sentimos, su navegador no soporta <code>video</code> incrustados, pero no se preocupe , puede <a href="./videos/less-brown.mp4">descargarlo</a> y verlo con su reproductor de video favorito!
+      </video>
+    </div>
+    <div class="video-container">
+      <iframe width="640" height="480" src="https://www.youtube.com/embed/vgU4BsJonTk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+
     <!-- bower:js -->
     <!-- endbower -->
     <!-- inject:js -->
     <script src="scripts/vendors/jquery-1.11.3.min.js"></script>
     <script src="scripts/vendors/modernizr-2.8.3.min.js"></script>
+    <script src="scripts/vendors/retina.min.js"></script>
+    <script src="scripts/vendors/selectivizr-min.js"></script>
     <script src="scripts/main.min.js"></script>
     <!-- endinject -->
   </body>
