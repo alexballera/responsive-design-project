@@ -1,0 +1,76 @@
+.header{
+  background-color: $black;
+  color: $white;
+  height: 64px;
+  line-height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all .3s ease;
+  &__mobile{
+    display: flex;
+    justify-content: space-between;
+    background-color: $black;
+    &--logo{
+      margin-left: 1em;
+      font-size: 2em;
+      order: 1;
+    }
+    &--btn{
+      border: 0;
+      margin-right: 1em;
+      order: 2;
+      border-radius: 5px;
+      background-color: $black;
+    }
+  }
+  &__menu--navbar{
+    background-color: $black;
+  }
+  &__menu--list{
+    height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    transition: height .3s ease;
+    &--show{
+      height: 280px;
+      transition: height .3s ease;
+    }
+    &--item{
+      a{
+        text-decoration: none;
+        color: $white;
+        width: 100%;
+        padding: 1.5em;
+        display: block;
+      }
+    }
+  }
+}
+@include respond-to(md) {
+  .header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80px;
+    transition: all .3s ease;
+    line-height: 80px;
+    &__mobile--btn{
+      display: none;
+    }
+    &__menu--list{
+      height: 80px;
+      &--item{
+        display: inline-block;
+        margin: 0 1em;
+        text-align: center;
+        & a{
+          padding: 0 1em;
+        }
+      }
+    }
+  }
+}

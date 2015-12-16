@@ -1,0 +1,10 @@
+//Este es el archivo principal de Estilos,'preferiblemente
+//con archivos para cada bloque o archivo html e importarlo
+//con @import
+@import './vendors/reset.css';
+@import './vendors/normalize.css';
+@import './vendors/flexgrid.min.css';
+@import './variables/var';
+@import './variables/customs';
+@import './mixins/breakpoints';
+@import './partials/header';

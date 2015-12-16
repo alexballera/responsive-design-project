@@ -1,0 +1,83 @@
+@import url(./vendors/reset.css);
+@import url(./vendors/normalize.css);
+@import url(./vendors/flexgrid.min.css);
+body {
+  font-size: 16px; }
+
+.header {
+  background-color: #212121;
+  color: #F1FFF9;
+  height: 64px;
+  line-height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all .3s ease; }
+  .header__mobile {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #212121; }
+    .header__mobile--logo {
+      margin-left: 1em;
+      font-size: 2em;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .header__mobile--btn {
+      border: 0;
+      margin-right: 1em;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2;
+      border-radius: 5px;
+      background-color: #212121; }
+  .header__menu--navbar {
+    background-color: #212121; }
+  .header__menu--list {
+    height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    transition: height .3s ease; }
+    .header__menu--list--show {
+      height: 280px;
+      transition: height .3s ease; }
+    .header__menu--list--item a {
+      text-decoration: none;
+      color: #F1FFF9;
+      width: 100%;
+      padding: 1.5em;
+      display: block; }
+
+@media only screen and (min-width: 48em) {
+  .header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 80px;
+    transition: all .3s ease;
+    line-height: 80px; }
+    .header__mobile--btn {
+      display: none; }
+    .header__menu--list {
+      height: 80px; }
+      .header__menu--list--item {
+        display: inline-block;
+        margin: 0 1em;
+        text-align: center; }
+        .header__menu--list--item a {
+          padding: 0 1em; } }

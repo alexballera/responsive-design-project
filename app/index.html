@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mi Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function(w){var dpr=((w.devicePixelRatio===undefined)?1:w.devicePixelRatio);if(!!w.navigator.standalone){var r=new XMLHttpRequest();r.open('GET','/retinaimages.php?devicePixelRatio='+dpr,false);r.send()}else{document.cookie='devicePixelRatio='+dpr+'; path=/'}})(window)
+    </script>
+    <noscript><style id="devicePixelRatio" media="only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)">html{background-image:url("/retinaimages.php?devicePixelRatio=2")}</style>
+    </noscript>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/style.min.css">
+    <!-- endinject -->
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="header__mobile">
+        <p class="header__mobile--logo">Logo</p>
+        <button id="btnMenu" class="header__mobile--btn">Menu</button>
+      </div>
+      <nav class="header__menu--navbar">
+        <ul id="navbarMenu" class="header__menu--list">
+          <li class="header__menu--list--item"><a href="#">Inicio</a></li>
+          <li class="header__menu--list--item"><a href="#">Acerca de</a></li>
+          <li class="header__menu--list--item"><a href="#">Blog</a></li>
+          <li class="header__menu--list--item"><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="scripts/vendors/jquery-1.11.3.min.js"></script>
+    <script src="scripts/vendors/modernizr-2.8.3.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
