@@ -4,6 +4,7 @@ body,
 button,
 code,
 div,
+h3,
 header,
 html,
 li,
@@ -57,12 +58,6 @@ a:hover {
   outline: 0;
 }
 
-.header,
-.header__menu--navbar,
-.header__mobile--btn {
-  background-color: #212121;
-}
-
 code {
   font-family: monospace,monospace;
   font-size: 1em;
@@ -98,6 +93,7 @@ body {
 }
 
 .header {
+  background-color: #212121;
   color: #F1FFF9;
   height: 64px;
   line-height: 64px;
@@ -107,6 +103,11 @@ body {
   width: 100%;
   z-index: 10;
   transition: all .3s ease;
+}
+
+.header__menu--navbar,
+.header__mobile--btn {
+  background-color: #212121;
 }
 
 .header__mobile {
@@ -210,8 +211,49 @@ video {
   margin-top: 64px;
 }
 
+.content__features--block {
+  padding: 1em;
+  border-left: 6px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+
+.content__features--block:hover {
+  background-color: #dedede;
+}
+
+.content__features--block:nth-child(1) {
+  border-left-color: #FD0303;
+}
+
+.content__features--block:nth-child(2) {
+  border-left-color: #59FB07;
+}
+
+.content__features--block:nth-child(3) {
+  border-left-color: #FF7400;
+}
+
+.content__features--block:nth-child(4) {
+  border-left-color: #032EFF;
+}
+
+.content__features--block--title {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 1em 0;
+}
+
 @media only screen and (min-width:48em) {
   .content {
     margin-top: 80px;
+  }
+
+  .content__features {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }

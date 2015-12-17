@@ -15,6 +15,9 @@ body {
   width: 100%;
   z-index: 10;
   transition: all .3s ease; }
+  .header__light {
+    background-color: #F1FFF9;
+    color: #212121; }
   .header__mobile {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -39,6 +42,8 @@ body {
       background-color: #212121; }
   .header__menu--navbar {
     background-color: #212121; }
+    .header__menu--navbar__light {
+      background-color: #F1FFF9; }
   .header__menu--list {
     height: 0;
     overflow: hidden;
@@ -53,6 +58,8 @@ body {
       width: 100%;
       padding: 1.5em;
       display: block; }
+    .header__menu--list--item__light a {
+      color: #212121; }
 
 @media only screen and (min-width: 48em) {
   .header {
