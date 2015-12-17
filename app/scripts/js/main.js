@@ -11,12 +11,13 @@
     navbarMenu.classList.toggle('header__menu--list');
   }
   // Video
-  var v = document.getElementsByTagName("video")[0];
+  var v = document.getElementsByTagName('video')[0];
   var video = document.getElementById('video');
   
-  video.addEventListener('click', initVideo);
+  video.addEventListener('click', onClickVideo);
   
-  function initVideo(){
-    v.play()
+  function onClickVideo(){
+    video.setAttribute('controls', 'controls');
+    v.play();
   }
 }());

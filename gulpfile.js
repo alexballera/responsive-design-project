@@ -164,8 +164,9 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest('./dist/bower_components'));
 	gulp.src([config.scripts.app + '/vendors/*.js'])
 	.pipe(gulp.dest(config.scripts.output + '/vendors/'));
-	gulp.src([config.styles.app + '/vendors/*.css'])
-	.pipe(gulp.dest(config.styles.output + '/vendors/'));
+	gulp.src(config.html.watch)
+	.pipe(gulp.dest('./'));
+
 });
 
 //Reload
