@@ -9,6 +9,15 @@
   width: 100%;
   z-index: 10;
   transition: all .3s ease;
+  @include respond-to(md) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80px;
+    transition: all .3s ease;
+    line-height: 80px;
+  }
   &__light{
     background-color: $white;
     color: $black;
@@ -16,7 +25,6 @@
   &__mobile{
     display: flex;
     justify-content: space-between;
-    // background-color: $black;
     &--logo{
       margin-left: 1em;
       font-size: 2em;
@@ -29,6 +37,9 @@
       order: 2;
       border-radius: 5px;
       background-color: $black;
+      @include respond-to(md) {
+        display: none;
+      }
     }
   }
   &__menu--navbar{
@@ -42,46 +53,32 @@
     overflow: hidden;
     list-style-type: none;
     transition: height .3s ease;
+    @include respond-to(md) {
+      height: 80px;
+      margin-right: 2em;
+    }
     &--show{
       height: 280px;
       transition: height .3s ease;
     }
     &--item{
-      a{
+      @include respond-to(md) {
+        display: inline-block;
+        margin: 0 .5em;
+        text-align: center;
+      }
+      & a{
         text-decoration: none;
         color: $white;
         width: 100%;
         padding: 1.5em;
         display: block;
+        @include respond-to(md) {
+          padding: 0 .5em;
+        }
       }
       &__light a{
         color: $black;
-      }
-    }
-  }
-}
-@include respond-to(md) {
-  .header{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 80px;
-    transition: all .3s ease;
-    line-height: 80px;
-    &__mobile--btn{
-      display: none;
-    }
-    &__menu--list{
-      height: 80px;
-      margin-right: 2em;
-      &--item{
-        display: inline-block;
-        margin: 0 .5em;
-        text-align: center;
-        & a{
-          padding: 0 .5em;
-        }
       }
     }
   }
