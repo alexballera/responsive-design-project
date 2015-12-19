@@ -44,41 +44,6 @@ ul {
   list-style: none;
 }
 
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 300;
-  src: local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'),local('Lato-Bold'),url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 400;
-  src: local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 700;
-  src: local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v6/IQHow_FEYlDC4Gzy_m8fcvEr6Hm6RMS0v1dtXsGir4g.ttf) format('truetype');
-}
-
 .header {
   background-color: #212121;
   color: #F1FFF9;

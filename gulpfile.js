@@ -24,22 +24,25 @@ gulp.task('serve', function () {
 		notify: false,
 		logPrefix: 'BS',
 		server: {
-			baseDir: ['./app']
+			baseDir: [globs.app]
 		},
 		host: '0.0.0.0',
 		port: 8080,
 		ui: {
 			port: 8081
 		},
-		browser: ["google-chrome", "firefox"]
+		browser: ["google-chrome"]
 	});
 });
 
 //Variables
 var globs = {
+	app: './app',
+	dist: './dist',
 	html: {
 		main: './app/index.html',
 		watch: './app/**/*.html',
+		dist: './dist',
 		dist: './dist'
 	},
 	styles: {
@@ -82,7 +85,7 @@ gulp.task('html', function() {
 	};
 	return gulp.src(globs.html.main)
 	.pipe(minifyHTML(opts))
-	.pipe(gulp.dest(globs.html.dist));
+	.pipe(gulp.dest(globs.dist));
 });
 
 //Styles: CSS  Minificado
@@ -102,7 +105,7 @@ gulp.task('build:styles', function(){
 gulp.task('uncss', function() {
 	return gulp.src(globs.styles.app + '/**.min.css')
 	.pipe(uncss({
-		html: ['index.html', 'app/**/*.html']
+		html: ['index.html', globs.html.watch]
 		}))
 	.pipe(gulp.dest(globs.styles.dist))
 	.pipe(gulp.dest(globs.styles.app));
@@ -145,9 +148,9 @@ gulp.task('clean:images', function(cb) {
 
 // Inyectando css y js al index.html
 gulp.task('inject', function () {
-	gulp.src('./app/*.html')
-	.pipe(inject(gulp.src(['./app/styles/style.min.css', globs.scripts.app+'/vendors/*.js', './app/scripts/main.min.js'], {read: false}), {relative: true}))
-	.pipe(gulp.dest('./app'));
+	gulp.src(globs.html.main)
+	.pipe(inject(gulp.src([globs.styles.app+'/style.min.css', globs.scripts.app+'/vendors/*.js', globs.scripts.app+'/main.min.js'], {read: false}), {relative: true}))
+	.pipe(gulp.dest(globs.app));
 });
 
 // Inyectando las librerias Bower
@@ -161,7 +164,7 @@ gulp.task('wiredep', function () {
 
 // Clean
 gulp.task('clean', function(cb) {
-	return del(['./dist/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist, globs.videos.dist, globs.fonts.dist], cb);
+	return del([globs.html.dist+'/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist, globs.videos.dist, globs.fonts.dist], cb);
 });
 
 //Install
