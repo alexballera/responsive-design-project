@@ -14,14 +14,14 @@
     //Menú
     btnMenu.addEventListener('click', onClickMenu);
     
-    var onClickMenu = function onClickMenu(){
+    function onClickMenu(){
       navbarMenu.classList.toggle('header__menu--list--show');
       navbarMenu.classList.toggle('header__menu--list');
     };
     // Video
     videoVideo.addEventListener('click', onClickVideo);
     
-    var onClickVideo = function onClickVideo(){
+    function onClickVideo(){
       videoVideo.setAttribute('controls', 'controls');
       video.play();
     };
@@ -29,7 +29,7 @@
     //Scroll
     headerElem.addEventListener('scroll', onScroll);
 
-    var onScroll = function onScroll(){
+    function onScroll(){
       if(window.scrollY >= 100) {
         headerElem.classList.toggle('.header__light');
       }else{
