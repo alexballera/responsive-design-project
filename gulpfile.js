@@ -59,6 +59,12 @@ var globs = {
 		watch: './app/images/**/*.*',
 		app: './app/images',
 		dist: './dist/images'
+	},
+	videos: {
+		main: './app/videos/**',
+		watch: './app/videos/**/*.*',
+		app: './app/videos',
+		dist: './dist/videos'
 	}
 };
 
@@ -149,7 +155,7 @@ gulp.task('wiredep', function () {
 
 // Clean
 gulp.task('clean', function(cb) {
-	return del(['./dist/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist], cb);
+	return del(['./dist/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist, globs.videos.dist], cb);
 });
 
 //Install
@@ -166,6 +172,8 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest(globs.scripts.dist + '/vendors/'));
 	gulp.src(globs.html.watch)
 	.pipe(gulp.dest('./'));
+	gulp.src(globs.videos.watch)
+	.pipe(gulp.dest(globs.videos.dist));
 
 });
 

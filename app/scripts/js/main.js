@@ -17,14 +17,14 @@
     function onClickMenu(){
       navbarMenu.classList.toggle('header__menu--list--show');
       navbarMenu.classList.toggle('header__menu--list');
-    };
+    }
     // Video
     videoVideo.addEventListener('click', onClickVideo);
     
     function onClickVideo(){
       videoVideo.setAttribute('controls', 'controls');
       video.play();
-    };
+    }
 
     //Scroll
     headerElem.addEventListener('scroll', onScroll);
@@ -35,7 +35,7 @@
       }else{
         headerElem.classList.toggle('.header__light');
       }
-    };
+    }
 
     //Load CSS
     var url = [
