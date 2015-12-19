@@ -65,6 +65,12 @@ var globs = {
 		watch: './app/videos/**/*.*',
 		app: './app/videos',
 		dist: './dist/videos'
+	},
+	fonts: {
+		main: './app/fonts/**',
+		watch: './app/fonts/**/*.*',
+		app: './app/fonts',
+		dist: './dist/fonts'
 	}
 };
 
@@ -155,7 +161,7 @@ gulp.task('wiredep', function () {
 
 // Clean
 gulp.task('clean', function(cb) {
-	return del(['./dist/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist, globs.videos.dist], cb);
+	return del(['./dist/**/.*.html', './dist/bower_components/**', globs.styles.dist, globs.scripts.dist, globs.images.dist, globs.videos.dist, globs.fonts.dist], cb);
 });
 
 //Install
@@ -174,6 +180,8 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest('./'));
 	gulp.src(globs.videos.watch)
 	.pipe(gulp.dest(globs.videos.dist));
+	gulp.src(globs.fonts.watch)
+	.pipe(gulp.dest(globs.fonts.dist));
 
 });
 
