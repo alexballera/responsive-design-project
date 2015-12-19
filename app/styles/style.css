@@ -1,9 +1,11 @@
 @import url(./vendors/reset.css);
-@import url(./vendors/normalize.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700);
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: 'lato'; }
 
 .header {
+  font-family: 'Montserrat';
   background-color: #212121;
   color: #F1FFF9;
   height: 64px;
@@ -122,6 +124,7 @@ body {
     .content__features--block--title {
       font-size: 1.2em;
       font-weight: 700;
+      font-family: 'Montserrat';
       padding: 1em 0; }
 
 @media only screen and (min-width: 48em) {

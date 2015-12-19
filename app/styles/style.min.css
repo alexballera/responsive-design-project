@@ -7,6 +7,7 @@ div,
 h3,
 header,
 html,
+i,
 img,
 li,
 nav,
@@ -30,71 +31,52 @@ section {
 
 body {
   line-height: 1;
+  font-size: 16px;
+  font-family: lato;
+}
+
+.content__features--block--title,
+.header {
+  font-family: Montserrat;
 }
 
 ul {
   list-style: none;
 }
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
 }
 
-video {
-  display: inline-block;
-  vertical-align: baseline;
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
 }
 
-a {
-  background-color: transparent;
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'),local('Lato-Bold'),url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
 }
 
-a:active,
-a:hover {
-  outline: 0;
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf) format('truetype');
 }
 
-img {
-  border: 0;
-}
-
-code {
-  font-family: monospace,monospace;
-  font-size: 1em;
-}
-
-button {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-button {
-  overflow: visible;
-}
-
-button {
-  text-transform: none;
-}
-
-button {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-body {
-  margin: 0;
-  font-size: 16px;
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v6/IQHow_FEYlDC4Gzy_m8fcvEr6Hm6RMS0v1dtXsGir4g.ttf) format('truetype');
 }
 
 .header {

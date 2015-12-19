@@ -2,9 +2,9 @@
 //con archivos para cada bloque o archivo html e importarlo
 //con @import
 @import './vendors/reset.css';
-@import './vendors/normalize.css';
 @import './variables/var';
 @import './variables/customs';
 @import './mixins/breakpoints';
 @import './partials/header';
 @import './partials/content';
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700);
