@@ -52,7 +52,7 @@ var globs = {
 		dist: './dist/styles'
 	},
 	scripts: {
-		main: './app/scripts/main.js',
+		main: './app/scripts/js/main.js',
 		watch: './app/scripts/**/*.js',
 		app: './app/scripts',
 		dist: './dist/scripts'
@@ -113,7 +113,7 @@ gulp.task('uncss', function() {
 
 // Scripts: todos los archivos JS concatenados en uno solo minificado
 gulp.task('scripts', function() {
-	return gulp.src([globs.scripts.app+'/js/*.js'])
+	return gulp.src(globs.scripts.main)
 	.pipe(jshint('.jshintrc'))
 	.pipe(jshint.reporter('default'))
 	.pipe(concat('main.js'))
