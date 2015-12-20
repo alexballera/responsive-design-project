@@ -7,9 +7,9 @@ var autoprefixer	= require('gulp-autoprefixer');
 var minifycss		= require('gulp-minify-css');
 var rename			= require('gulp-rename');
 var uncss			= require('gulp-uncss');
-var jshint			= require('gulp-jshint');
+// var jshint			= require('gulp-jshint');
 var uglify			= require('gulp-uglify');
-var concat			= require('gulp-concat');
+// var concat			= require('gulp-concat');
 var imagemin		= require('gulp-imagemin');
 var pngquant		= require('imagemin-pngquant');
 var cache			= require('gulp-cache');
@@ -17,6 +17,10 @@ var del				= require('del');
 var inject			= require('gulp-inject');
 var wiredep		= require('wiredep').stream;
 var install			= require("gulp-install");
+
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 //Servidor - Browsersync
 gulp.task('serve', function () {
@@ -113,11 +117,15 @@ gulp.task('uncss', function() {
 
 // Scripts: todos los archivos JS concatenados en uno solo minificado
 gulp.task('scripts', function() {
-	return gulp.src(globs.scripts.main)
-	.pipe(jshint('.jshintrc'))
-	.pipe(jshint.reporter('default'))
-	.pipe(concat('main.js'))
-	.pipe(rename({ suffix: '.min' }))
+	// return gulp.src(globs.scripts.main)
+	// .pipe(jshint('.jshintrc'))
+	// .pipe(jshint.reporter('default'))
+	// .pipe(concat('main.js'))
+	// .pipe(rename({ suffix: '.min' }))
+	return browserify(globs.scripts.main)
+    .bundle()
+    .pipe(source('main.min.js'))
+    .pipe(buffer())
 	.pipe(uglify())
 	.pipe(gulp.dest(globs.scripts.dist))
 	.pipe(gulp.dest(globs.scripts.app));
