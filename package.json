@@ -39,7 +39,17 @@
     "imagemin-pngquant": "^4.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "wiredep": "^2.2.2"
+    "wiredep": "^2.2.2",
+    "standard": "^3.0.0"
   },
+  "scripts": {
+    "test": "standard && node my-tests.js"
+  },
+  "standard": {
+    "ignore": [
+        "**/vendors/**",
+        "tmp.js"
+        ]
+    },
   "dependencies": {}
 }

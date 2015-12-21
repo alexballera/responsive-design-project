@@ -1,25 +1,25 @@
-var gulp			= require('gulp');
-var browserSync	= require('browser-sync');
-var reload			= browserSync.reload;
-var minifyHTML	= require('gulp-minify-html');
-var sass			= require('gulp-sass');
-var autoprefixer	= require('gulp-autoprefixer');
-var minifycss		= require('gulp-minify-css');
-var rename			= require('gulp-rename');
-var uncss			= require('gulp-uncss');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify			= require('gulp-uglify');
-var imagemin		= require('gulp-imagemin');
-var pngquant		= require('imagemin-pngquant');
-var cache			= require('gulp-cache');
-var del				= require('del');
-var inject			= require('gulp-inject');
-var wiredep		= require('wiredep').stream;
-var install			= require("gulp-install");
+var gulp			= require('gulp')
+var browserSync	= require('browser-sync')
+var reload			= browserSync.reload
+var minifyHTML	= require('gulp-minify-html')
+var sass			= require('gulp-sass')
+var autoprefixer	= require('gulp-autoprefixer')
+var minifycss		= require('gulp-minify-css')
+var rename			= require('gulp-rename')
+var uncss			= require('gulp-uncss')
+var browserify = require('browserify')
+var source = require('vinyl-source-stream')
+var buffer = require('vinyl-buffer')
+var uglify			= require('gulp-uglify')
+var imagemin		= require('gulp-imagemin')
+var pngquant		= require('imagemin-pngquant')
+var cache			= require('gulp-cache')
+var del				= require('del')
+var inject			= require('gulp-inject')
+var wiredep		= require('wiredep').stream
+var install			= require('gulp-install')
 
-//Servidor - Browsersync
+// Servidor - Browsersync
 gulp.task('serve', function () {
 	browserSync({
 		notify: false,
@@ -115,12 +115,12 @@ gulp.task('uncss', function() {
 // Scripts: todos los archivos JS concatenados en uno solo minificado
 gulp.task('scripts', function() {
 	return browserify(globs.scripts.main)
-    .bundle()
-    .pipe(source('main.min.js'))
-    .pipe(buffer())
+	.bundle()
+	.pipe(source('main.min.js'))
+	.pipe(buffer())
 	.pipe(uglify())
-	.pipe(gulp.dest(globs.scripts.dist))
-	.pipe(gulp.dest(globs.scripts.app));
+	.pipe(gulp.dest(globs.scripts.dist+'/js'))
+	.pipe(gulp.dest(globs.scripts.app+'/js'));
 });
 
 // Images
@@ -149,7 +149,7 @@ gulp.task('clean:images', function(cb) {
 // Inyectando css y js al index.html
 gulp.task('inject', function () {
 	gulp.src(globs.html.main)
-	.pipe(inject(gulp.src([globs.styles.app+'/style.min.css', globs.scripts.app+'/vendors/*.js', globs.scripts.app+'/main.min.js'], {read: false}), {relative: true}))
+	.pipe(inject(gulp.src([globs.styles.app+'/style.min.css', globs.scripts.app+'/vendors/*.js', globs.scripts.app+'/js/main.min.js'], {read: false}), {relative: true}))
 	.pipe(gulp.dest(globs.app));
 });
 

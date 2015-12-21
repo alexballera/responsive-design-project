@@ -1,57 +1,36 @@
-(function (){
-  'use strict';
-  document.addEventListener('DOMContentLoaded', onDOMLoad);
+(function () {
+  'use strict'
+  var loadCSS = require('../lib/loadCSS')
+  var onScroll = require('../lib/onScroll')
+  var onClickMenu = require('../lib/onClickMenu')
+  var onClickVideo = require('../lib/onClickVideo')
 
-  function onDOMLoad(){
-    //Variables Globales
-    var btnMenu = document.getElementById('btnMenu');
-    var navbarMenu = document.getElementById('navbarMenu');
-    var video = document.getElementsByTagName('video')[0];
-    var videoVideo = document.getElementById('video');
-    var headerElem = document.querySelector('header');
+  document.addEventListener('DOMContentLoaded', onDOMLoad)
 
+  function onDOMLoad () {
+    // Variables Globales
+    var btnMenu = document.getElementById('btnMenu')
+    var navbarMenu = document.getElementById('navbarMenu')
+    var video = document.getElementsByTagName('video')[0]
+    var videoVideo = document.getElementById('video')
+    var headerElem = document.querySelector('header')
 
-    //Menú
-    btnMenu.addEventListener('click', onClickMenu);
-    
-    function onClickMenu(){
-      navbarMenu.classList.toggle('header__menu--list--show');
-      navbarMenu.classList.toggle('header__menu--list');
-    }
+    // Menú
+    btnMenu.addEventListener('click', onClickMenu)
+
     // Video
-    videoVideo.addEventListener('click', onClickVideo);
-    
-    function onClickVideo(){
-      videoVideo.setAttribute('controls', 'controls');
-      video.play();
-    }
+    videoVideo.addEventListener('click', onClickVideo)
 
-    //Scroll
-    headerElem.addEventListener('scroll', onScroll);
+    // Scroll
+    headerElem.addEventListener('scroll', onScroll)
 
-    function onScroll(){
-      if(window.scrollY >= 100) {
-        headerElem.classList.toggle('.header__light');
-      }else{
-        headerElem.classList.toggle('.header__light');
-      }
-    }
-
-    //Load CSS
+    // Load CSS
     var url = [
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css',
-    'https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700'
-    ];
-    var loadCSS = function loadCSS(url){
-      for (var i = 0; i < url.length; i++){
-      var elem = document.createElement('link');
-        elem.rel = 'stylesheet';
-        elem.href = url[i];
-        document.head.appendChild(elem);
-      }
-    };
-    loadCSS(url);
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css',
+      'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css',
+      'https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700'
+    ]
+    loadCSS(url)
   }
-}());
+}())
 
